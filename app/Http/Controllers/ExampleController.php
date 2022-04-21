@@ -348,7 +348,7 @@ class ExampleController extends Controller
         $la_paras = $Request->json()->all();
         $file_path1 = base_path('tmp/trace.log');
         error_log($la_paras['ContentData']."\r\n",3,$file_path1);
-        return 12345;
+        return $la_paras['ContentData'];
         $this->validate($Request, [
             '*.user_id' => 'required',
 //distinct,数组中的每一个order_number都应该是唯一的（对数组中的order_number进行检查）。。。保证传入数据的准确性
